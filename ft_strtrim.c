@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: malkilan <malkilan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/10 20:17:59 by malkilan          #+#    #+#             */
-/*   Updated: 2025/08/10 20:18:50 by malkilan         ###   ########.fr       */
+/*   Created: 2025/08/19 18:29:35 by malkilan          #+#    #+#             */
+/*   Updated: 2025/08/19 19:17:31 by malkilan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int ch)
+
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	if (ch >= 65 && ch <= 90)
-		return (ch + 32);
-	return (ch);
+	char	*str;
+	int		i;
+	int		j;
+	int		size;
+
+	i = ft_strlen(s1);
+	size = 0;
+	// while (s[j] != 0)
+	// {
+	// 	//substr && strchr
+	// }
 }
