@@ -6,7 +6,7 @@
 /*   By: malkilan <malkilan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 15:57:13 by malkilan          #+#    #+#             */
-/*   Updated: 2025/08/20 15:41:35 by malkilan         ###   ########.fr       */
+/*   Updated: 2025/08/21 14:51:34 by malkilan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-int main(void)
-{
-    printf("%s", ft_strchr("test	t", '	'));
-    return (0);
-}
+// int main(void)
+// {
+//     printf("%s", ft_strchr("test	t", '	'));
+//     return (0);
+// }

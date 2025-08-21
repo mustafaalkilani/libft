@@ -6,7 +6,7 @@
 /*   By: malkilan <malkilan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/19 14:15:59 by malkilan          #+#    #+#             */
-/*   Updated: 2025/08/19 14:31:44 by malkilan         ###   ########.fr       */
+/*   Updated: 2025/08/21 14:53:02 by malkilan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 
 	ptr = malloc(nmemb * size);
 	i = 0;
-	if(!ptr)
+	if (!ptr)
 		return (NULL);
 	while (i < nmemb)
 	{
