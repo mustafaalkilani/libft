@@ -5,6 +5,7 @@
         "format": "c",
         "stdlib.h": "c",
         "stdio.h": "c",
-        "sstream": "c"
+        "sstream": "c",
+        "ratio": "c"
     }
 }

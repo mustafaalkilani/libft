@@ -6,7 +6,7 @@
 /*   By: malkilan <malkilan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 16:33:05 by malkilan          #+#    #+#             */
-/*   Updated: 2025/08/19 20:55:48 by malkilan         ###   ########.fr       */
+/*   Updated: 2025/08/23 17:11:37 by malkilan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int				i;
+	size_t				i;
 	unsigned char	*str;
 
 	i = 0;

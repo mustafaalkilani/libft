@@ -6,13 +6,13 @@
 /*   By: malkilan <malkilan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/21 16:48:33 by malkilan          #+#    #+#             */
-/*   Updated: 2025/08/23 16:12:24 by malkilan         ###   ########.fr       */
+/*   Updated: 2025/08/23 17:09:47 by malkilan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include <stdio.h>
 
-// #include "libft.h"
+#include "libft.h"
 
 int	ft_atoi(char *nptr)
 {
