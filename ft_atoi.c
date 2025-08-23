@@ -6,11 +6,13 @@
 /*   By: malkilan <malkilan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/21 16:48:33 by malkilan          #+#    #+#             */
-/*   Updated: 2025/08/21 16:48:36 by malkilan         ###   ########.fr       */
+/*   Updated: 2025/08/23 16:12:24 by malkilan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include <stdio.h>
+
+// #include "libft.h"
 
 int	ft_atoi(char *nptr)
 {
@@ -37,9 +39,3 @@ int	ft_atoi(char *nptr)
 	}
 	return (sign * num);
 }
-
-// int	main(int argc, char *argv[])
-// {
-// 	printf("%d", ft_atoi(argv[1]));
-// 	return (argc);
-// }
