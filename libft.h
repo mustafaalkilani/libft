@@ -41,5 +41,5 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 int		ft_tolower(int ch);
 int		ft_toupper(int ch);
-char    **ft_split(char const *s, char c);
+char	**ft_split(char const *s, char c);
 #endif
