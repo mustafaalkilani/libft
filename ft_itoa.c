@@ -6,7 +6,7 @@
 /*   By: mustafa <mustafa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 14:22:39 by malkilan          #+#    #+#             */
-/*   Updated: 2025/08/24 03:42:15 by mustafa          ###   ########.fr       */
+/*   Updated: 2025/08/24 18:58:02 by mustafa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,6 @@ int	get_size(int num)
 	counter = 0;
 	if (num == 0)
 		return (1);
-	if (num < 0)
-	{
-		num = -1 * num;
-		counter++;
-	}
 	while (num > 0)
 	{
 		num /= 10;
@@ -35,46 +30,38 @@ int	get_size(int num)
 	return (counter);
 }
 
-char	*convert(int n, int flag, char *str, int i)
+char	*convert(int n,char *str, int len)
 {
-	int	len;
-
-	len = get_size(n);
-	while ((n * flag) > 0)
+	while (n > 0)
 	{
-		str[len - 1] = ((flag * n) % 10) + '0';
+		str[--len] = (n % 10) + '0';
 		n /= 10;
-		len--;
-		i++;
 	}
-	str[i + 1] = 0;
 	return (str);
 }
 
 char	*ft_itoa(int n)
 {
 	int		len;
-	int		i;
 	int		flag;
 	char	*str;
 
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	if (n == 0)
+		return (ft_strdup("0"));
 	len = get_size(n);
-	i = 0;
 	flag = 1;
 	str = malloc(len + 1);
 	if (!str)
 		return (NULL);
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
+	str[len] = '\0';
 	if (n < 0)
 	{
 		flag = -1;
 		str[0] = '-';
+		n = -n;
 	}
-	if (n == 0)
-	{
-		str[len - 1] = '0';
-		i++;
-	}
-	return (convert(n, flag, str, i));
+
+	return (convert(n, str, len));
 }
