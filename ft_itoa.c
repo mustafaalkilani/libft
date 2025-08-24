@@ -6,7 +6,7 @@
 /*   By: mustafa <mustafa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 14:22:39 by malkilan          #+#    #+#             */
-/*   Updated: 2025/08/24 18:58:02 by mustafa          ###   ########.fr       */
+/*   Updated: 2025/08/25 01:53:47 by mustafa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ int	get_size(int num)
 	int	counter;
 
 	counter = 0;
-	if (num == 0)
-		return (1);
-	while (num > 0)
+	if (num <= 0)
+		counter++;
+	while (num != 0)
 	{
 		num /= 10;
 		counter++;
@@ -30,7 +30,7 @@ int	get_size(int num)
 	return (counter);
 }
 
-char	*convert(int n,char *str, int len)
+char	*convert(int n, char *str, int len)
 {
 	while (n > 0)
 	{
@@ -62,6 +62,5 @@ char	*ft_itoa(int n)
 		str[0] = '-';
 		n = -n;
 	}
-
 	return (convert(n, str, len));
 }
