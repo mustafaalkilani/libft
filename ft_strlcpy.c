@@ -33,15 +33,15 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 }
 
 /*
-int main(void)
+int	main(void)
 {
 	char	src[];
-    char dst[20];
+	char dst[20];
 	int		len;
 
-    src[] = "Hello, world!";
-    len = ft_strlcpy(dst, src, sizeof(dst));
-    printf("Copied string: '%s'\n", dst);
-    printf("Length of src: %d\n", len);
-    return (0);
+	src[] = "Hello, world!";
+	len = ft_strlcpy(dst, src, sizeof(dst));
+	printf("Copied string: '%s'\n", dst);
+	printf("Length of src: %d\n", len);
+	return (0);
 }*/

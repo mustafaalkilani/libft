@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: malkilan <malkilan@student.42.fr>          +#+  +:+       +#+         #
+#    By: mustafa <mustafa@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/19 17:59:19 by malkilan          #+#    #+#              #
-#    Updated: 2025/08/23 14:11:54 by malkilan         ###   ########.fr        #
+#    Updated: 2025/08/24 03:44:22 by mustafa          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,10 @@ $(NAME):
 	ar rc $(NAME) $(OBJS)
 
 re: fclean all
+
+so:
+	$(CC) -nostartfiles -fPIC -Wall -Wextra -Werror $(FILENAME)
+	gcc -nostartfiles -shared -o libft.so $(OBJS)
 
 clean:
 	rm -f $(OBJS)

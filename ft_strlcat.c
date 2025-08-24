@@ -40,13 +40,13 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 /*
 int	main(void)
 {
-    char src[] = "Hello";
-    char dst[] = " World";
+	char src[] = "Hello";
+	char dst[] = " World";
 
-    int len = ft_strlcat(dst, src, 12);
+	int len = ft_strlcat(dst, src, 12);
 
-    printf("Copied string: '%s'\n", dst);
-    printf("Length of src: %d\n", len);
+	printf("Copied string: '%s'\n", dst);
+	printf("Length of src: %d\n", len);
 
-    return (0);
+	return (0);
 } */

@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: malkilan <malkilan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mustafa <mustafa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 14:22:39 by malkilan          #+#    #+#             */
-/*   Updated: 2025/08/23 17:38:25 by malkilan         ###   ########.fr       */
+/*   Updated: 2025/08/24 03:42:15 by mustafa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
+
+// #include <stdio.h>
+// #include <stdlib.h>
 
 int	get_size(int num)
 {
@@ -32,6 +33,22 @@ int	get_size(int num)
 		counter++;
 	}
 	return (counter);
+}
+
+char	*convert(int n, int flag, char *str, int i)
+{
+	int	len;
+
+	len = get_size(n);
+	while ((n * flag) > 0)
+	{
+		str[len - 1] = ((flag * n) % 10) + '0';
+		n /= 10;
+		len--;
+		i++;
+	}
+	str[i + 1] = 0;
+	return (str);
 }
 
 char	*ft_itoa(int n)
@@ -59,14 +76,5 @@ char	*ft_itoa(int n)
 		str[len - 1] = '0';
 		i++;
 	}
-	while ((n * flag) > 0)
-	{
-		str[len - 1] = ((flag * n) % 10) + '0';
-		n /= 10;
-		len--;
-		i++;
-	}
-	str[i + 1] = 0;
-	return (str);
+	return (convert(n, flag, str, i));
 }
-
