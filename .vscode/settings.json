@@ -7,6 +7,7 @@
         "stdio.h": "c",
         "sstream": "c",
         "ratio": "c",
-        "new": "c"
+        "new": "c",
+        "stdint.h": "c"
     }
 }
