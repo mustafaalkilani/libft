@@ -6,7 +6,7 @@
 /*   By: malkilan <malkilan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/21 16:48:13 by malkilan          #+#    #+#             */
-/*   Updated: 2025/08/23 14:21:47 by malkilan         ###   ########.fr       */
+/*   Updated: 2025/08/25 18:15:58 by malkilan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,19 @@ int	get_array_size(char const *s, char c)
 		i++;
 	}
 	return (count);
+}
+
+void	free_array(char **array, int size)
+{
+	int	i;
+
+	i = 0;
+	while (i < size)
+	{
+		free(array[i]);
+		i++;
+	}
+	free(array);
 }
 
 char	**ft_split(char const *s, char c)
@@ -50,6 +63,11 @@ char	**ft_split(char const *s, char c)
 		while (s[j + len] && s[j + len] != c)
 			len++;
 		array[i] = ft_substr(s, j, len);
+		if (!array[i])
+		{
+			free_array(array, i);
+			return (NULL);	
+		}
 		j += len;
 		i++;
 	}

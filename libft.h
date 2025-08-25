@@ -6,14 +6,13 @@
 /*   By: malkilan <malkilan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/19 17:51:35 by malkilan          #+#    #+#             */
-/*   Updated: 2025/08/25 17:51:32 by malkilan         ###   ########.fr       */
+/*   Updated: 2025/08/25 18:26:18 by malkilan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdint.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
