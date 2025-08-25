@@ -6,7 +6,7 @@
 /*   By: malkilan <malkilan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/21 16:48:13 by malkilan          #+#    #+#             */
-/*   Updated: 2025/08/25 18:47:51 by malkilan         ###   ########.fr       */
+/*   Updated: 2025/08/25 19:18:01 by malkilan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,18 +41,12 @@ void	free_array(char **array, int size)
 	free(array);
 }
 
-char	**ft_split(char const *s, char c)
+char	**split(int count, char const *s, char c, char **array)
 {
-	int		i;
-	int		j;
-	int		len;
-	int		count;
-	char	**array;
+	int	i;
+	int	j;
+	int	len;
 
-	count = get_array_size(s, c);
-	array = malloc((count + 1) * sizeof(char *));
-	if (!array)
-		return (NULL);
 	i = 0;
 	j = 0;
 	while (i < count)
@@ -66,11 +60,23 @@ char	**ft_split(char const *s, char c)
 		if (!array[i])
 		{
 			free_array(array, i);
-			return (NULL);	
+			return (NULL);
 		}
 		j += len;
 		i++;
 	}
 	array[i] = NULL;
 	return (array);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	int		count;
+	char	**array;
+
+	count = get_array_size(s, c);
+	array = malloc((count + 1) * sizeof(char *));
+	if (!array)
+		return (NULL);
+	return (split(count, s, c, array));
 }
