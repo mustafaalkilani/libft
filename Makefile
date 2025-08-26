@@ -6,7 +6,7 @@
 #    By: mustafa <mustafa@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/19 17:59:19 by malkilan          #+#    #+#              #
-#    Updated: 2025/08/26 17:10:58 by mustafa          ###   ########.fr        #
+#    Updated: 2025/08/26 23:27:20 by mustafa          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,20 +18,25 @@ FILENAME	= ft_isalnum.c ft_isprint.c ft_memcmp.c  ft_putchar_fd.c ft_split.c \
 					ft_strnstr.c ft_tolower.c ft_bzero.c   ft_isascii.c ft_striteri.c \
 					ft_memmove.c ft_putnbr_fd.c  ft_strdup.c  ft_strlen.c  ft_strrchr.c \
 					ft_toupper.c ft_calloc.c  ft_isdigit.c ft_memchr.c  ft_memset.c  \
-					ft_putstr_fd.c  ft_strjoin.c ft_strmapi.c ft_strtrim.c
-OBJS 		= $(FILENAME:.c=.o)
+					ft_putstr_fd.c  ft_strjoin.c ft_strmapi.c ft_strtrim.c 
+BOUNS		= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c
 
-CC = gcc
+OBJS 		= $(FILENAME:.c=.o)
+BOUNS_OBJS	= $(BOUNS:.c=.o)
+
+CC = cc
 CFLAGS = -Wall -Werror -Wextra
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) -c $(FILENAME)
-	ar rc $(NAME) $(OBJS)
+	ar rcs $(NAME) $(OBJS)
+
+bonus: $(BOUNS_OBJS)
+	ar rcs $(NAME) $(BOUNS_OBJS)
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(BOUNS_OBJS)
 
 fclean: clean
 	rm -rf $(NAME)
