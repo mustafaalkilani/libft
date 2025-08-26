@@ -6,7 +6,7 @@
 /*   By: mustafa <mustafa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 17:30:02 by malkilan          #+#    #+#             */
-/*   Updated: 2025/08/24 03:26:03 by mustafa          ###   ########.fr       */
+/*   Updated: 2025/08/26 17:06:57 by mustafa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	i;
 	size_t	j;
 
-	if ((!big || !little) && len == 0)
-		return (NULL);
 	if (*little == '\0')
 		return ((char *)big);
 	i = 0;

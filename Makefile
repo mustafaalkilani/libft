@@ -6,33 +6,34 @@
 #    By: mustafa <mustafa@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/19 17:59:19 by malkilan          #+#    #+#              #
-#    Updated: 2025/08/24 03:44:22 by mustafa          ###   ########.fr        #
+#    Updated: 2025/08/26 17:10:58 by mustafa          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= libft.a
 
-FILENAME	= ft_*.c
+FILENAME	= ft_isalnum.c ft_isprint.c ft_memcmp.c  ft_putchar_fd.c ft_split.c \
+					ft_strlcat.c ft_strncmp.c ft_substr.c ft_atoi.c ft_isalpha.c \
+					ft_itoa.c ft_memcpy.c  ft_putendl_fd.c ft_strchr.c  ft_strlcpy.c \
+					ft_strnstr.c ft_tolower.c ft_bzero.c   ft_isascii.c ft_striteri.c \
+					ft_memmove.c ft_putnbr_fd.c  ft_strdup.c  ft_strlen.c  ft_strrchr.c \
+					ft_toupper.c ft_calloc.c  ft_isdigit.c ft_memchr.c  ft_memset.c  \
+					ft_putstr_fd.c  ft_strjoin.c ft_strmapi.c ft_strtrim.c
 OBJS 		= $(FILENAME:.c=.o)
 
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
-CFLAGS += -I libft.h
 
 all: $(NAME)
 
-$(NAME):
+$(NAME): $(OBJS)
 	$(CC) -c $(FILENAME)
 	ar rc $(NAME) $(OBJS)
-
-re: fclean all
-
-so:
-	$(CC) -nostartfiles -fPIC -Wall -Wextra -Werror $(FILENAME)
-	gcc -nostartfiles -shared -o libft.so $(OBJS)
 
 clean:
 	rm -f $(OBJS)
 
 fclean: clean
 	rm -rf $(NAME)
+
+re: fclean all

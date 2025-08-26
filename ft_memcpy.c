@@ -6,7 +6,7 @@
 /*   By: mustafa <mustafa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/09 14:43:41 by malkilan          #+#    #+#             */
-/*   Updated: 2025/08/24 03:19:15 by mustafa          ###   ########.fr       */
+/*   Updated: 2025/08/26 17:05:36 by mustafa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	unsigned char	*d;
 	unsigned char	*s;
 
-	if (!dest && !src)
-		return (NULL);
 	s = (unsigned char *)src;
 	d = (unsigned char *)dest;
 	i = 0;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: malkilan <malkilan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mustafa <mustafa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 14:22:39 by malkilan          #+#    #+#             */
-/*   Updated: 2025/08/25 15:26:00 by malkilan         ###   ########.fr       */
+/*   Updated: 2025/08/26 16:55:43 by mustafa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ char	*convert(int n, char *str, int len)
 char	*ft_itoa(int n)
 {
 	int		len;
-	int		flag;
 	char	*str;
 
 	if (n == -2147483648)
@@ -48,14 +47,12 @@ char	*ft_itoa(int n)
 	if (n == 0)
 		return (ft_strdup("0"));
 	len = get_size(n);
-	flag = 1;
 	str = malloc(len + 1);
 	if (!str)
 		return (NULL);
 	str[len] = '\0';
 	if (n < 0)
 	{
-		flag = -1;
 		str[0] = '-';
 		n = -n;
 	}
