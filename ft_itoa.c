@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mustafa <mustafa@student.42.fr>            +#+  +:+       +#+        */
+/*   By: malkilan <malkilan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 14:22:39 by malkilan          #+#    #+#             */
-/*   Updated: 2025/08/26 16:55:43 by mustafa          ###   ########.fr       */
+/*   Updated: 2025/08/27 20:22:47 by malkilan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	get_size(int num)
+static int	get_size(int num)
 {
 	int	counter;
 
@@ -27,12 +27,13 @@ int	get_size(int num)
 	return (counter);
 }
 
-char	*convert(int n, char *str, int len)
+static char	*convert(int n, char *str, int len)
 {
 	while (n > 0)
 	{
-		str[--len] = (n % 10) + '0';
+		str[len - 1] = (n % 10) + '0';
 		n /= 10;
+		len--;
 	}
 	return (str);
 }

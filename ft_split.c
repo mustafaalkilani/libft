@@ -6,13 +6,13 @@
 /*   By: malkilan <malkilan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/21 16:48:13 by malkilan          #+#    #+#             */
-/*   Updated: 2025/08/25 19:18:01 by malkilan         ###   ########.fr       */
+/*   Updated: 2025/08/27 20:20:35 by malkilan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	get_array_size(char const *s, char c)
+static int	get_array_size(char const *s, char c)
 {
 	int	i;
 	int	count;
@@ -28,7 +28,7 @@ int	get_array_size(char const *s, char c)
 	return (count);
 }
 
-void	free_array(char **array, int size)
+static void	free_array(char **array, int size)
 {
 	int	i;
 
@@ -41,7 +41,7 @@ void	free_array(char **array, int size)
 	free(array);
 }
 
-char	**split(int count, char const *s, char c, char **array)
+static char	**kys(int count, char const *s, char c, char **array)
 {
 	int	i;
 	int	j;
@@ -78,5 +78,5 @@ char	**ft_split(char const *s, char c)
 	array = malloc((count + 1) * sizeof(char *));
 	if (!array)
 		return (NULL);
-	return (split(count, s, c, array));
+	return (kys(count, s, c, array));
 }
