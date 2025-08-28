@@ -6,7 +6,7 @@
 #    By: malkilan <malkilan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/19 17:59:19 by malkilan          #+#    #+#              #
-#    Updated: 2025/08/27 20:52:07 by malkilan         ###   ########.fr        #
+#    Updated: 2025/08/28 15:50:40 by malkilan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,3 +44,5 @@ fclean: clean
 	rm -rf $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re bonus

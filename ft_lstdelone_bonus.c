@@ -6,7 +6,14 @@
 /*   By: malkilan <malkilan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 20:49:41 by malkilan          #+#    #+#             */
-/*   Updated: 2025/08/27 20:49:42 by malkilan         ###   ########.fr       */
+/*   Updated: 2025/08/28 16:05:27 by malkilan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
+{
+	del(lst->content);
+	free(lst);
+}
