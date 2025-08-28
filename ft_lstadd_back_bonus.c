@@ -6,7 +6,7 @@
 /*   By: malkilan <malkilan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 20:49:24 by malkilan          #+#    #+#             */
-/*   Updated: 2025/08/28 16:13:00 by malkilan         ###   ########.fr       */
+/*   Updated: 2025/08/28 19:43:23 by malkilan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-
 	if (!new)
 		return ;
 	if (*lst == NULL)
@@ -22,5 +21,5 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		*lst = new;
 		return ;
 	}
-	ft_lstlast(*lst) -> next = new;
+	ft_lstlast(*lst)->next = new;
 }
