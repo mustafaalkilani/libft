@@ -6,7 +6,7 @@
 #    By: malkilan <malkilan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/19 17:59:19 by malkilan          #+#    #+#              #
-#    Updated: 2025/08/28 19:45:08 by malkilan         ###   ########.fr        #
+#    Updated: 2025/09/10 14:47:13 by malkilan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ BOUNS		= ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast
 				ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c
 OBJS 		= $(FILENAME:.c=.o)
 BOUNS_OBJS	= $(BOUNS:.c=.o)
+BONUS_FILE = .bonus.txt
 
 CC = cc
 CFLAGS = -Wall -Werror -Wextra
@@ -32,12 +33,14 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
-bonus: $(BOUNS_OBJS)
+bonus: $(BONUS_FILE)
+
+$(BONUS_FILE): $(BOUNS_OBJS)
 	ar rcs $(NAME) $(BOUNS_OBJS)
+	touch $(BONUS_FILE)
 
 clean:
-	rm -f $(OBJS) $(BOUNS_OBJS)
-
+	rm -f $(OBJS) $(BOUNS_OBJS) $(BONUS_FILE)
 fclean: clean
 	rm -rf $(NAME)
 
